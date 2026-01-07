@@ -1,0 +1,68 @@
+# Unity default ignores
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+UserSettings/
+GUIPackCartoon/
+Assets/GUIPackCartoon/
+Assets/ObbyGame_Characters_MegaPack_/
+Assets/Bitgem/
+
+Assets/_Project/Sprites/Layer Lab/
+Assets/IgniteCoders/
+# Asset Store tools
+Assets/AssetStoreTools*
+
+# Visual Studio cache
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Builds
+*.apk
+*.aab
+*.exe
+
+# Crashlytics
+Assets/Plugins/Crashlytics/
+
+# Addressables default ignores
+/ServerData
+/[Aa]ssets/StreamingAssets/aa*
+/[Aa]ssets/AddressableAssetsData/link.xml*
+/[Aa]ssets/Addressables_Temp*
+/[Aa]ssets/AddressableAssetsData/*/*.bin*
+
+# Visual Scripting auto-generated files
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+
+# Unity Packages (do not commit — they are redundant)
+*.unitypackage
+
+# Large models (track source, not FBX if >50 MB)
+Assets/_Externals/**/Model/*.fbx
+Assets/_Externals/**/Scene/*.unitypackage
