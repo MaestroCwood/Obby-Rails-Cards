@@ -29,7 +29,7 @@ public class VisuaManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.instance.OnUpdateCointCoin += Instance_OnUpdateCointCoin;
-        GameEvents.OnSelectedBridge += OnSelectedBridge;
+        GameEvents.OnSelectedRails += OnSelectedBridge;
         GameEvents.OnDontHaveMany += OnDontHaveMany;
     }
 
@@ -48,7 +48,7 @@ public class VisuaManager : MonoBehaviour
     private void OnDisable()
     {
         GameManager.instance.OnUpdateCointCoin -= Instance_OnUpdateCointCoin;
-        GameEvents.OnSelectedBridge -= OnSelectedBridge;
+        GameEvents.OnSelectedRails -= OnSelectedBridge;
         GameEvents.OnDontHaveMany -= OnDontHaveMany;
     }
 

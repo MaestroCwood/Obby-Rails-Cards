@@ -6,9 +6,9 @@ public class GameEvents : MonoBehaviour
 {
     public static Action<int> OnGenerateCoin;
 
-    public static Action<int, int> OnBuyedRails;
+    public static Action<ItemRails> OnBuyedRails;
 
-    public static Action<int, Sprite> OnSelectedBridge;
+    public static Action<int, Sprite> OnSelectedRails;
 
     public static Action<int> OnDontHaveMany;
 

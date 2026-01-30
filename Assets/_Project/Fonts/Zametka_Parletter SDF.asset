@@ -116,10 +116,10 @@ MonoBehaviour:
     m_StrikethroughThickness: 6.591797
     m_TabWidth: 22
   m_Material: {fileID: -4128126106693662647}
-  m_SourceFontFileGUID: 4721bd5a26f714845a01b8ea5fffded8
+  m_SourceFontFileGUID: f1dc9085915820b4b964bc6ecc287812
   m_CreationSettings:
     sourceFontFileName: 
-    sourceFontFileGUID: 4721bd5a26f714845a01b8ea5fffded8
+    sourceFontFileGUID: f1dc9085915820b4b964bc6ecc287812
     faceIndex: 0
     pointSizeSamplingMode: 0
     pointSize: 90
@@ -3992,7 +3992,7 @@ MonoBehaviour:
     m_MarkToMarkAdjustmentRecords: []
   m_ShouldReimportFontFeatures: 0
   m_FallbackFontAssetTable:
-  - {fileID: 11400000, guid: 61e2e86e2e38bcc448b36c5a173282af, type: 2}
+  - {fileID: 11400000, guid: 56d6dd868e9913f47a1abf370557ef08, type: 2}
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}

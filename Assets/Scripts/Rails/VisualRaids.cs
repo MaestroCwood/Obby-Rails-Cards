@@ -30,7 +30,7 @@ public class VisualRaids : MonoBehaviour
 
     private void MakeRaidsManager_OnMakeRaids(int currentEl, int maxEl)
     {
-        textCountRaid.text = $"{currentEl}/{maxEl}";
+        textCountRaid.text = $"{RailsTxt()}: {currentEl}/{maxEl}";
         
     }
 
@@ -56,4 +56,11 @@ public class VisualRaids : MonoBehaviour
             }
         }
     }
+
+    string RailsTxt()
+    {
+        string txt = language == "ru" ? "Рельсы" : "Rails";
+        return txt;
+    }
+    
 }

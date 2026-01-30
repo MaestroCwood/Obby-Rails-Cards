@@ -2,6 +2,7 @@ using StarterAssets;
 using System;
 using UnityEngine;
 using UnityEngine.Splines;
+using YG;
 
 public class MakeRaidsManager : MonoBehaviour
 {
@@ -11,14 +12,16 @@ public class MakeRaidsManager : MonoBehaviour
 
 
     [Header("Settings")]
-    [SerializeField] private int maxElement = 10;
+    public int maxElement = 10;
     [SerializeField] private float distanceToMake = 2.0f;
     [SerializeField] float offsetY;
+
+    public int addRewardedLimit = 10;
 
     private Spline spline;
     private bool isStartMake = false;
     bool isGoToTelejkaActive;
-    private int countMakeRaidsElement = 0;
+    public int countMakeRaidsElement { get; private set; } = 0;
     private bool isInitialized = false;
 
     public event Action<int, int> OnMakeRaids;
@@ -32,6 +35,8 @@ public class MakeRaidsManager : MonoBehaviour
         GameEvents.OnSplineStarted += OnSplineStarted;
         GoToRainds.OnStartRaindGoMove += GoToRainds_OnStartRaindGoMove;
         GoToRainds.OnStopRaindGoMove += GoToRainds_OnStopRaindGoMove;
+
+        YG2.onRewardAdv += OnRewardedShow;
     }
 
 
@@ -40,7 +45,11 @@ public class MakeRaidsManager : MonoBehaviour
         GameEvents.OnSplineStarted -= OnSplineStarted;
         GoToRainds.OnStartRaindGoMove -= GoToRainds_OnStartRaindGoMove;
         GoToRainds.OnStopRaindGoMove -= GoToRainds_OnStopRaindGoMove;
+
+        YG2.onRewardAdv -= OnRewardedShow;
     }
+
+   
 
     private void Start()
     {
@@ -48,7 +57,13 @@ public class MakeRaidsManager : MonoBehaviour
         {
             Initialize();
         }
+
+        if(PlayerPrefs.GetInt("Limit") != 0)
+            LoadDataLimit();
+
         OnIsStartMake?.Invoke(isStartMake);
+
+        OnMakeRaids?.Invoke(countMakeRaidsElement, maxElement);
     }
 
     private void OnSplineStarted()
@@ -56,6 +71,21 @@ public class MakeRaidsManager : MonoBehaviour
         ClearRaids();
     }
 
+    public void AddLimitRails(int limit)
+    {
+        maxElement += limit;
+    }
+
+    private void OnRewardedShow(string obj)
+    {
+       if(obj == "Limit")
+        {
+            AddLimitRails(addRewardedLimit);
+            OnMakeRaids?.Invoke(countMakeRaidsElement, maxElement);
+
+            SaveDataLimit();
+        }
+    }
     private void GoToRainds_OnStartRaindGoMove(object sender, EventArgs e)
     {
         // ClearRaids();
@@ -65,6 +95,16 @@ public class MakeRaidsManager : MonoBehaviour
 
     }
 
+    void SaveDataLimit()
+    {
+        PlayerPrefs.SetInt("Limit", maxElement);
+        PlayerPrefs.Save();
+    }
+
+    void LoadDataLimit()
+    {
+        maxElement = PlayerPrefs.GetInt("Limit");
+    }
 
     private void GoToRainds_OnStopRaindGoMove(object sender, EventArgs e)
     {
@@ -177,6 +217,8 @@ public class MakeRaidsManager : MonoBehaviour
 
         isStartMake = true;
         OnIsStartMake?.Invoke(isStartMake);
+
+        AudioManager.instance.PlayFx(4);
         Debug.Log("Начато создание сплайна");
     }
 
@@ -236,6 +278,7 @@ public class MakeRaidsManager : MonoBehaviour
         }
         countMakeRaidsElement++;
         OnMakeRaids?.Invoke(countMakeRaidsElement, maxElement);
+        AudioManager.instance.PlayFx(4);
         Debug.Log($"Добавлен новый узел. Всего узлов: {countMakeRaidsElement}");
     }
 

@@ -1,4 +1,6 @@
+using StarterAssets;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class GenerateCoin : MonoBehaviour
@@ -6,8 +8,11 @@ public class GenerateCoin : MonoBehaviour
     [SerializeField] float delayGenerate = 5f;
     [SerializeField] GameObject icoFx;
     [SerializeField] GameObject destroyFx;
- 
+    [SerializeField] ThirdPersonController playerController;
+    [SerializeField] GoToRainds goToRainds;
     [SerializeField] bool isActiveGenerate = false;
+
+    [SerializeField] Color[] colors;
 
 
 
@@ -25,19 +30,37 @@ public class GenerateCoin : MonoBehaviour
         {
             if (isActiveGenerate)
             {
-                GameObject go = Instantiate(icoFx, transform.position, Quaternion.identity);
+                GameObject go = Instantiate(icoFx, playerController.transform.position, Quaternion.identity);
 
+                TextMeshPro txt = go.GetComponentInChildren<TextMeshPro>();
+                txt.text = $"+{GameManager.instance.GetCurrentGenerate()}";
+                txt.color = colors[RandIndex()];
                 Animate(go);
+               
                 GameEvents.OnGenerateCoin?.Invoke(GameManager.instance.GetCurrentGenerate());
-                float ranDelay = Random.Range(delayGenerate, delayGenerate + 5);
-                yield return new WaitForSeconds(ranDelay);
+                
+                yield return new WaitForSeconds(delayGenerate);
             }
 
             yield return null;
         }
     }
 
-
+    int RandIndex()
+    {
+        int index = Random.Range(0, colors.Length);
+        return index;
+    }
+    private void Update()
+    {
+        if(goToRainds.isMoveNow)
+        {
+            isActiveGenerate = true;
+        } else
+        {
+            isActiveGenerate = false;
+        }
+    }
 
     void Animate(GameObject go)
     {   

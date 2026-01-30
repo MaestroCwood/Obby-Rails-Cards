@@ -18,7 +18,7 @@ public class ShopManager : MonoBehaviour
         GameEvents.OnBuyedRails -= OnBuyedBridge;
     }
 
-    private void OnBuyedBridge(int obj, int ID)
+    private void OnBuyedBridge(ItemRails item)
     {
         Debug.Log("BUY!");
     }

@@ -8,7 +8,8 @@ public enum TypeItem
 {
     Crone,
     Moust,
-    Vest
+    Vest,
+    Rails
 }
 public class TriggerActivateShop : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class TriggerActivateShop : MonoBehaviour
     public static event Action<int> OnBuyCrone;
     public static event Action<int> OnBuyMust;
     public static event Action<int> OnBuyVest;
+    public static event Action<int> OnBuyRails;
 
     public bool isBuyed = false;
 
@@ -37,7 +39,7 @@ public class TriggerActivateShop : MonoBehaviour
     private void Start()
     {
         //priceCroneTxt.text = priceCrone.ToString();
-        priceCroneTxt.text = croneItenScrObject.priceCrone.ToString();
+        priceCroneTxt.text = $"${croneItenScrObject.priceCrone}" ;
 
         // „итаем сохранЄнную покупку (0 Ч не куплено, 1 Ч куплено)
         isBuyed = PlayerPrefs.GetInt($"{prefix}{croneItenScrObject.IDCrone}", 0) == 1;
@@ -104,13 +106,15 @@ public class TriggerActivateShop : MonoBehaviour
               }
 
               if (isBuyed)
-              {     
-                  if(TypeItem.Crone == typeItem)
-                    OnBuyCrone?.Invoke(croneItenScrObject.IDCrone);
-                  else if(TypeItem.Moust == typeItem)
+              {
+                  if (TypeItem.Crone == typeItem)
+                      OnBuyCrone?.Invoke(croneItenScrObject.IDCrone);
+                  else if (TypeItem.Moust == typeItem)
                       OnBuyMust?.Invoke(croneItenScrObject.IDCrone);
                   else if (TypeItem.Vest == typeItem)
                       OnBuyVest?.Invoke(croneItenScrObject.IDCrone);
+                  else if (TypeItem.Rails == typeItem)
+                      OnBuyRails?.Invoke(croneItenScrObject.IDCrone);
                   //Checkitem(typeItem);
               }
           });
@@ -129,7 +133,7 @@ public class TriggerActivateShop : MonoBehaviour
         buyOkObj.SetActive(true);
         priceCroneTxt.gameObject.SetActive(false);
         fillImageBuy.fillAmount = 1f;
-        frame.color = Color.yellow; // например выделить UI
+        frame.color = Color.yellow; 
 
     }
     void ClearFillBuyImage()

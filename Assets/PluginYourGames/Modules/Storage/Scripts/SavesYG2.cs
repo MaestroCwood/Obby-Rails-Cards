@@ -6,6 +6,10 @@ namespace YG
     {
         public int idSave;
 
-        public string[] IDskins = new string[7] { "0", "0", "0", "0", "0", "0", "0" };
+        public string[] IDskins = new string[8] { "0", "0", "0", "0", "0", "0", "0", "0" };
+
+        public int IDRails;
+
+        public int skinHuggi;
     }
 }
