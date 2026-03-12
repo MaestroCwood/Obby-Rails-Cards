@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - CinemachineTarget
+  - Brain
+  - Base
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - 
   - RawImage
   - 
-  - 
+  - SahurWall
   - 
   - 
   - 

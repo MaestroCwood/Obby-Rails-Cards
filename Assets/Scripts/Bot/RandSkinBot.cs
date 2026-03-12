@@ -3,6 +3,7 @@ using UnityEngine;
 public class RandSkinBot : MonoBehaviour
 {
     [SerializeField] GameObject[] skinMeshBot;
+   
 
     Animator animator;
 
@@ -26,8 +27,10 @@ public class RandSkinBot : MonoBehaviour
 
         int index = RandIndex();
         skinMeshBot[index].SetActive(true);
-        var avatar = skinMeshBot[index].GetComponent<AvatarBot>();
-        animator.avatar = avatar.avatarBot;
+        var avatarBtot = skinMeshBot[index].GetComponent<AvatarBot>();
+
+        // var avatar = skinMeshBot[index].GetComponent<AvatarBot>();
+        animator.avatar = avatarBtot.avatarBot;
 
     }
 

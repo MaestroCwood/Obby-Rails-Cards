@@ -80,14 +80,14 @@ public class DissoveController : MonoBehaviour
         float endValue = 1;
 
       
-        ItemRails itemRails = GetComponentInParent<ItemRails>();
+      
         _currentTween = LeanTween.value(gameObject, (float val) =>
         {
             fillImageBuy.fillAmount = val;
         }, startValue, endValue, delayToBuyEvent)
           .setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
           {
-              GameEvents.OnBuyedRails?.Invoke(itemRails);
+              
           });
 
     }

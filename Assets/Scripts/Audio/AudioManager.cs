@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameEvents.OnDestrouBridgeElement += OnDestroyBridgeElement;
+       
         assetsInputs.OnStartJumpPlayer += PlayerController_OnStartJumpPlayer;
         playerController.OnLandPlayer += PlayerController_OnLandPlayer;
 
@@ -42,15 +42,10 @@ public class AudioManager : MonoBehaviour
 
     private void OnDisable()
     {
-        GameEvents.OnDestrouBridgeElement -= OnDestroyBridgeElement;
         assetsInputs.OnStartJumpPlayer -= PlayerController_OnStartJumpPlayer;
         playerController.OnLandPlayer -= PlayerController_OnLandPlayer;
     }
 
-    private void OnDestroyBridgeElement(Vector3 vector)
-    {
-        PlayFx(1); 
-    }
     private void PlayerController_OnStartJumpPlayer()
     {
       

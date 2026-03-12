@@ -7,14 +7,12 @@ using YG;
 public class VisuaManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI countCoin;
-    [SerializeField] TextMeshProUGUI countBridgeElement;
 
     [SerializeField] TextMeshProUGUI warningMessageTxt;
     [SerializeField] GameObject warningPanelObj;
     [SerializeField] GameObject arrowTargetHelper;
     [SerializeField] Image frame;
-    [SerializeField] GameObject arrowToStartMakeBridge;
-    [SerializeField] Image currentIcoBridge;
+ 
 
     [SerializeField] LeanTweenType ease;
     string language;
@@ -29,14 +27,13 @@ public class VisuaManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.instance.OnUpdateCointCoin += Instance_OnUpdateCointCoin;
-        GameEvents.OnSelectedRails += OnSelectedBridge;
+       
         GameEvents.OnDontHaveMany += OnDontHaveMany;
     }
 
     private void MakeManager_OnWarningMessgeDistance(object sender, float e)
     {
 
-        arrowToStartMakeBridge.gameObject.SetActive(true);
         arrowTargetHelper.gameObject.SetActive(true);
         AnimateWarning();
         string msg = language == "ru" ? "Ты слишком далеко от стройки" : " You're too far from the construction site";
@@ -48,7 +45,7 @@ public class VisuaManager : MonoBehaviour
     private void OnDisable()
     {
         GameManager.instance.OnUpdateCointCoin -= Instance_OnUpdateCointCoin;
-        GameEvents.OnSelectedRails -= OnSelectedBridge;
+        
         GameEvents.OnDontHaveMany -= OnDontHaveMany;
     }
 
@@ -95,15 +92,9 @@ public class VisuaManager : MonoBehaviour
                 {
                     warningPanelObj.SetActive(false);
                     isAcriveWarningPanel = false;
-                    arrowToStartMakeBridge.gameObject.SetActive(false);
                     arrowTargetHelper.gameObject.SetActive(false);
                 });
             });
-    }
-
-    private void OnSelectedBridge(int arg1, Sprite sprite)
-    {
-        currentIcoBridge.sprite = sprite;
     }
 
     private void Instance_OnUpdateCointCoin(object sender, int e)
