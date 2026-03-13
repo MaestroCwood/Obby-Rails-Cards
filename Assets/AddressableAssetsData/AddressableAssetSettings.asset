@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: d608b1a080c463549a1cef1b3a0bfd08
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 62c843055b381cf01927a992aefd5b22
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -24,11 +24,11 @@ MonoBehaviour:
   m_InternalBundleIdMode: 1
   m_AssetLoadMode: 0
   m_BundledAssetProviderType:
-    m_AssemblyName: 
-    m_ClassName: 
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider
   m_AssetBundleProviderType:
-    m_AssemblyName: 
-    m_ClassName: 
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
   m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
   m_EnableJsonCatalog: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Id: 
   m_RemoteCatalogLoadPath:
     m_Id: 
-  m_ContentStateBuildPathProfileVariableName: 
+  m_ContentStateBuildPathProfileVariableName: <default settings path>
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
@@ -78,6 +78,20 @@ MonoBehaviour:
         m_Value: 'ServerData/[BuildTarget]'
       - m_Id: ae7728ef4a7a39a41949f3ebd28cf3c6
         m_Value: <undefined>
+      - m_Id: d0e259973a1fc4340ba4ef134136fbe8
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+    - m_InheritedParent: 
+      m_Id: 760e0550b8021f540b1f712d60039b24
+      m_ProfileName: Main
+      m_Values:
+      - m_Id: 24de9d1e23e51684a9f6402ace0bda47
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 25c6cf32daed9104cab54598552ca053
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 50f586eb8ef5649449826c36ca6df1a5
+        m_Value: 'ServerData/[BuildTarget]'
+      - m_Id: ae7728ef4a7a39a41949f3ebd28cf3c6
+        m_Value: 'https://pixelartick.ru/addressables/[BuildTarget]'
       - m_Id: d0e259973a1fc4340ba4ef134136fbe8
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
     m_ProfileEntryNames:
@@ -112,4 +126,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74eba7e9c449b024393ab388cc7e9ab0, type: 2}
   - {fileID: 11400000, guid: ebed0df4bf2f9664582852e0c5845fff, type: 2}
   - {fileID: 11400000, guid: a8ca25f84c782e34ca3073d884ea587d, type: 2}
-  m_ActiveProfileId: 9244283cee49b694eae9df514c8a4319
+  m_ActiveProfileId: 760e0550b8021f540b1f712d60039b24

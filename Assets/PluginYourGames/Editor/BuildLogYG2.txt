@@ -1,3 +1,3 @@
-﻿Build path: C:/Users/wwwdu/Desktop/Проекты Юнити/Obby BrainRot/DiskSize
-Build number: 40
+﻿Build path: C:/Users/wwwdu/Desktop/Проекты Юнити/Obby BrainRot/777
+Build number: 48
 PluginYG version: 2.008
