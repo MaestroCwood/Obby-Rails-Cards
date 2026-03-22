@@ -15,7 +15,7 @@ public class InnapTrigger : MonoBehaviour
     public static event Action<IdSkinGameObject, string> OnTryBuySkin;
     public static event Action<IdSkinGameObject> OnSelected;
 
-
+    [SerializeField] SkateRewardedManager skateRewardedManager;
     string language;
 
     private void Awake()
@@ -96,7 +96,7 @@ public class InnapTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        
+        if (skateRewardedManager.isCurrentSkateActive) return;
         var activeSkin = ActivateInnap.Instance.CurrentSkin;
        
         if (!IsPurchased())

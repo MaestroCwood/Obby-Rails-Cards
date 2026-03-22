@@ -6,7 +6,7 @@ using YG;
 public class Rewarded : MonoBehaviour
 {
 
-
+    [SerializeField] GameObject trailReward;
     private void Start()
     {
         YG2.onRewardAdv += OnRewardedComlited;
@@ -32,6 +32,9 @@ public class Rewarded : MonoBehaviour
             case "3":
                 BoostJump();
                 break;
+            case "Speed":
+                BoostSpeed();
+                break;
         }
     }
 
@@ -50,6 +53,16 @@ public class Rewarded : MonoBehaviour
         float currentJump = playerController.JumpHeight;
         float targetJump = playerController.JumpHeight = currentJump * 1.5f;
         playerController.JumpHeight = Mathf.Clamp(targetJump, 3.5f, 30f);
+    }
+
+    private void BoostSpeed()
+    {
+        ThirdPersonController playerController = FindAnyObjectByType<ThirdPersonController>();
+        float currentSpeed = playerController.SprintSpeed;
+        float targetSpeed = playerController.SprintSpeed = currentSpeed * 1.3f;
+        playerController.SprintSpeed = targetSpeed;
+
+        trailReward.gameObject.SetActive(true);
     }
 
 }

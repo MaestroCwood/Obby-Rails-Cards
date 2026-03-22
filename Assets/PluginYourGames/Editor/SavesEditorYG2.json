@@ -1,18 +1,18 @@
 {
-  "idSave": 2,
+  "idSave": 8,
   "IDskins": [
     "0",
-    "0",
-    "0",
-    "0",
-    "0",
-    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
     "0",
     "0",
     "0",
     "0"
   ],
   "IDRails": 0,
-  "skinHuggi": 0,
+  "skinHuggi": 1,
   "skinBanana": 1
 }

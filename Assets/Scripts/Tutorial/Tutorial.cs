@@ -45,7 +45,7 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
-            textTurorial.text = language == "ru" ? "Попробуй собрать всех браинротов!" : "Try to collect all the Brainrotts!";
+            textTurorial.text = language == "ru" ? "Попробуй собрать всех мемов!" : "Try to collect all the memes.";
             PlaySoundTutor(1);
             DiactivateTutor();
 

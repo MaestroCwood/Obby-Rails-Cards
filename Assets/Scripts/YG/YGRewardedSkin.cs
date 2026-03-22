@@ -7,7 +7,7 @@ public class YGRewardedSkin : MonoBehaviour
     [SerializeField] Animator animatorPlayer;
     [SerializeField] Avatar avatar;
     [SerializeField] GameObject skinHuggy;
-
+    [SerializeField] SkateRewardedManager skateRewardedManager;
     [SerializeField] GameObject[] meshOtherPLayers;
     [SerializeField] GameObject ico;
 
@@ -71,6 +71,7 @@ public class YGRewardedSkin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (skateRewardedManager.isCurrentSkateActive) return;
         if (other.CompareTag("Player") && !isRewardedComlited)
         {
             switch (rewarded)
