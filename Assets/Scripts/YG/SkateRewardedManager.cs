@@ -1,6 +1,8 @@
 using StarterAssets;
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 using YG;
 
@@ -29,9 +31,12 @@ public class SkateRewardedManager : MonoBehaviour
     GameObject currentObjSkate;
     float defaultSprintSpeed;
     public bool isCurrentSkateActive { get; private set; }
+
+    [SerializeField] StarterAssetsInputs starterAssetsInputs;
     private void OnEnable()
     {
         YG2.onRewardAdv += OnRewardedAdw;
+        starterAssetsInputs.OnPressFKey += PressFBtn;
         GameEvents.OnActivateSkate += OnActiveateSkate;
         exitSkateBtn.onClick.AddListener(() =>
         {
@@ -42,9 +47,10 @@ public class SkateRewardedManager : MonoBehaviour
     private void OnDisable()
     {
         YG2.onRewardAdv -= OnRewardedAdw;
+        starterAssetsInputs.OnPressFKey -= PressFBtn;
         GameEvents.OnActivateSkate -= OnActiveateSkate;
     }
-
+  
     private void Start()
     {
        // playerController.center = new Vector3(0,1,0);
@@ -125,6 +131,12 @@ public class SkateRewardedManager : MonoBehaviour
         }
 
         
+    }
+
+    void PressFBtn()
+    {   
+        if(isCurrentSkateActive)
+            ExitSkate();
     }
 
     void ExitSkate()

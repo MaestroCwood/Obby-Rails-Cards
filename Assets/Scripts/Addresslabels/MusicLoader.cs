@@ -24,7 +24,7 @@ public class MusicLoader : MonoBehaviour
     {
         //Log("Start!");
         assetMusicBg.LoadAssetAsync().Completed += MusicLoader_Completed1;
-        Debug.Log("SSS");
+      
         //Log("Subscribe!");
     }
 

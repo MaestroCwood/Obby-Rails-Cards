@@ -29,6 +29,7 @@ namespace StarterAssets
         // my reference
         // public YGTouchscreen touchscreen;
         public event System.Action OnStartJumpPlayer;
+        public event Action OnPressFKey;
 
 #if ENABLE_INPUT_SYSTEM
 
@@ -55,7 +56,6 @@ namespace StarterAssets
 			Debug.Log("JUMP");
             
         }
-
 		public void OnSprint(InputValue value)
 		{
 			//SprintInput(value.isPressed);
@@ -83,7 +83,25 @@ namespace StarterAssets
 			sprint = newSprintState;
 		}
 
-		private void OnApplicationFocus(bool hasFocus)
+        public void OnPressF(InputValue value)
+        {
+            if (value.isPressed)
+            {
+               
+                OnPressFKey?.Invoke();
+            }
+        }
+
+        public void OnToggleCursor(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                cursorLocked = !cursorLocked;
+                SetCursorState(cursorLocked);
+            }
+        }
+
+        private void OnApplicationFocus(bool hasFocus)
 		{
 			//SetCursorState(cursorLocked);
 		}
@@ -93,16 +111,16 @@ namespace StarterAssets
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
 
-        private void Update()
-        {
-            if(UnityEngine.Input.GetKeyDown(KeyCode.Tab))
-			{
+   //     private void Update()
+   //     {
+   //         if(UnityEngine.Input.GetKeyDown(KeyCode.Tab))
+			//{
 				
-				SetCursorState(cursorLocked);
-				cursorLocked = !cursorLocked;
+			//	//SetCursorState(cursorLocked);
+			//	//cursorLocked = !cursorLocked;
 
-            }
-        }
+   //         }
+   //     }
 
     }
 	
