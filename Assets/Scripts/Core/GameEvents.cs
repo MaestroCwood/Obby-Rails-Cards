@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameEvents : MonoBehaviour
 {
@@ -17,7 +16,9 @@ public class GameEvents : MonoBehaviour
     public static Action<int, Enum> OnTimeRewardedComplited;
 
     public static Action OnSplineStarted;
-  
+
+
+   
 
 
 }

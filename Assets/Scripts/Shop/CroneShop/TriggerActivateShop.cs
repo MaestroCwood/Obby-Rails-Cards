@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public enum TypeItem
 {
     Crone,
-    Moust,
-    Vest,
     Rails
 }
 public class TriggerActivateShop : MonoBehaviour
@@ -24,9 +22,9 @@ public class TriggerActivateShop : MonoBehaviour
     private LTDescr _currentTween;
 
     string prefix = "CroneItem_";
-    public static event Action<int> OnBuyCrone;
-    public static event Action<int> OnBuyMust;
-    public static event Action<int> OnBuyVest;
+    public static event Action<int> OnBuyRalCart;
+    //public static event Action<int> OnBuyMust;
+  //  public static event Action<int> OnBuyVest;
     public static event Action<int> OnBuyRails;
 
     public bool isBuyed = false;
@@ -85,21 +83,19 @@ public class TriggerActivateShop : MonoBehaviour
               // TO DOO
              
               if (GameManager.instance.curentCountCoin >= croneItenScrObject.priceCrone && !isBuyed)
-              {   
+              {
                   isBuyed = true;
                   GameManager.instance.DecreamenteCoin(croneItenScrObject.priceCrone);
-                  //OnBuyCrone?.Invoke(croneItenScrObject.IDCrone);
-                  // Checkitem(typeItem);
-                  if (TypeItem.Crone == typeItem)
-                      OnBuyCrone?.Invoke(croneItenScrObject.IDCrone);
-                  else if (TypeItem.Moust == typeItem)
-                      OnBuyMust?.Invoke(croneItenScrObject.IDCrone);
-                  else if (TypeItem.Vest == typeItem)
-                      OnBuyVest?.Invoke(croneItenScrObject.IDCrone);
+
+                  // Вызываем событие для покупки (только один раз)
+                  if (typeItem == TypeItem.Rails)
+                  {
+                      OnBuyRails?.Invoke(croneItenScrObject.IDCrone);
+                  }
 
                   ChangeBuyToSelectObj();
                   PlayerPrefs.SetInt($"{prefix}{croneItenScrObject.IDCrone}", 1);
-                  Debug.Log("BUY!" +  typeItem + croneItenScrObject.IDCrone);
+                  Debug.Log("BUY! " + typeItem + " " + croneItenScrObject.IDCrone);
               } else if(GameManager.instance.curentCountCoin < croneItenScrObject.priceCrone && !isBuyed)
               {
                   DontHaveMany();
@@ -107,15 +103,15 @@ public class TriggerActivateShop : MonoBehaviour
 
               if (isBuyed)
               {
-                  if (TypeItem.Crone == typeItem)
-                      OnBuyCrone?.Invoke(croneItenScrObject.IDCrone);
-                  else if (TypeItem.Moust == typeItem)
-                      OnBuyMust?.Invoke(croneItenScrObject.IDCrone);
-                  else if (TypeItem.Vest == typeItem)
-                      OnBuyVest?.Invoke(croneItenScrObject.IDCrone);
-                  else if (TypeItem.Rails == typeItem)
-                      OnBuyRails?.Invoke(croneItenScrObject.IDCrone);
-                  //Checkitem(typeItem);
+                  //if (TypeItem.Crone == typeItem)
+                      //OnBuyCrone?.Invoke(croneItenScrObject.IDCrone);
+                  //else if (TypeItem.Moust == typeItem)
+                    //  OnBuyMust?.Invoke(croneItenScrObject.IDCrone);
+                  //else if (TypeItem.Vest == typeItem)
+                    //  OnBuyVest?.Invoke(croneItenScrObject.IDCrone);
+                //  if (TypeItem.Rails == typeItem)
+                  OnBuyRails?.Invoke(croneItenScrObject.IDCrone);
+                  Checkitem(typeItem);
               }
           });
         
@@ -145,15 +141,15 @@ public class TriggerActivateShop : MonoBehaviour
 
     void Checkitem(TypeItem type)
     {
-        switch(type)
-        {
-            case TypeItem.Crone:
-                OnBuyCrone?.Invoke(croneItenScrObject.IDCrone);
-                break;
-            case TypeItem.Moust:
-                OnBuyMust?.Invoke(croneItenScrObject.IDCrone);
-                break;
-        }
+       // switch(type)
+    //    {
+         //   case TypeItem.Crone:
+           //     OnBuyCrone?.Invoke(croneItenScrObject.IDCrone);
+          //      break;
+          //  case TypeItem.Moust:
+            //    OnBuyMust?.Invoke(croneItenScrObject.IDCrone);
+            //    break;
+      //  }
 
     }
 

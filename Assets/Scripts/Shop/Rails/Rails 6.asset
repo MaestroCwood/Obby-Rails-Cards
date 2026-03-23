@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da68f8e4b5c19e4daa81cb35e3801e7, type: 3}
   m_Name: Rails 6
   m_EditorClassIdentifier: 
-  IDCrone: 39
-  priceCrone: 35000
+  IDCrone: 6
+  priceCrone: 4

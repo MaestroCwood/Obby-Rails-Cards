@@ -8,13 +8,13 @@ public class CroneShopManager : MonoBehaviour
 
     private void OnEnable()
     {
-        TriggerActivateShop.OnBuyCrone += TriggerActivateShop_OnBuyCrone;
+      // TriggerActivateShop.OnBuyCrone += TriggerActivateShop_OnBuyCrone;
     }
 
 
     private void OnDisable()
     {
-        TriggerActivateShop.OnBuyCrone -= TriggerActivateShop_OnBuyCrone;
+        //TriggerActivateShop.OnBuyCrone -= TriggerActivateShop_OnBuyCrone;
     }
 
     private void TriggerActivateShop_OnBuyCrone(int obj)
