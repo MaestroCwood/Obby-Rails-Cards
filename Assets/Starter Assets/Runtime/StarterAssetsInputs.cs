@@ -30,6 +30,7 @@ namespace StarterAssets
         // public YGTouchscreen touchscreen;
         public event System.Action OnStartJumpPlayer;
         public event Action OnPressFKey;
+        public event Action OnPressEnterKey;
 
 #if ENABLE_INPUT_SYSTEM
 
@@ -89,6 +90,15 @@ namespace StarterAssets
             {
                
                 OnPressFKey?.Invoke();
+            }
+        }
+
+		public void OnPressEnterKeySender(InputValue value)
+		{
+            if (value.isPressed)
+            {
+
+                OnPressEnterKey?.Invoke();
             }
         }
 

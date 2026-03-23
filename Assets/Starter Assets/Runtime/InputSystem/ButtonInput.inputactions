@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "ButtonInput",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "7c7c0100-0d78-4738-847e-c2d1cd06a109",
+            "actions": [
+                {
+                    "name": "PressEnterKeySender",
+                    "type": "Button",
+                    "id": "d5ea2422-1501-4bc1-a52c-e64f983fabaf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6c68c1ba-1ced-44cb-bf25-06be5938569a",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressEnterKeySender",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
