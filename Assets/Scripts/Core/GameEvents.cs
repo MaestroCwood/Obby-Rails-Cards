@@ -17,8 +17,8 @@ public class GameEvents : MonoBehaviour
 
     public static Action OnSplineStarted;
 
+    public static Action OnOpenChat;
 
-   
 
 
 }
