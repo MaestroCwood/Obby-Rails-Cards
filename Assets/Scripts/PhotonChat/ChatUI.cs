@@ -70,7 +70,7 @@ public class ChatUI : MonoBehaviour
         string msg = inputField.text;
         if (string.IsNullOrWhiteSpace(msg)) return;
 
-        ChatManager.Instance.SendMessage(msg);      // отправка через Photon (если нужно)
+        ChatManager.Instance.SendMessageChaT(msg);      // отправка через Photon (если нужно)
         StartCoroutine(SendMessageToDatabase(msg)); // сохраняем в БД
 
         inputField.text = "";
@@ -108,7 +108,8 @@ public class ChatUI : MonoBehaviour
     // Загрузка последних сообщений из БД
     IEnumerator LoadMessages()
     {
-        using (UnityWebRequest www = UnityWebRequest.Get("https://pixelartick.ru/get_messages.php"))
+       
+        using (UnityWebRequest www = UnityWebRequest.Get("https://pixelartick.ru/chat-server/get_messages.php?chat=3"))
         {
             yield return www.SendWebRequest();
 
@@ -151,7 +152,7 @@ public class ChatUI : MonoBehaviour
         form.AddField("message", message);
         form.AddField("username", ChatManager.Instance.UserName);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("https://pixelartick.ru/send_message.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://pixelartick.ru/chat-server/send_message.php?chat=3", form))
         {
             yield return www.SendWebRequest();
 

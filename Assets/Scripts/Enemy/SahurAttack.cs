@@ -10,7 +10,7 @@ public class SahurAttack : MonoBehaviour
     [SerializeField] float attackRange = 5f;
     [SerializeField] GameObject fxDamage;
     [SerializeField] Transform targetPosCreatedFx;
-    [SerializeField] CinemachineCamera ciniemachine;
+   // [SerializeField] CinemachineCamera ciniemachine;
     [SerializeField] Perception perception;
     Vector3 startPosPlayer;
 
@@ -46,9 +46,9 @@ public class SahurAttack : MonoBehaviour
 
     IEnumerator SwitchCamera()
     {
-        ciniemachine.Priority = 20;
+      //  ciniemachine.Priority = 20;
         yield return new WaitForSeconds(2);
-        ciniemachine.Priority = 0;
+     //   ciniemachine.Priority = 0;
         if (TryGetComponent(out AIController ai))
         {   
             if(perception.CanSeeTarget(playerController.transform))

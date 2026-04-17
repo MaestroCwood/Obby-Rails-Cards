@@ -19,6 +19,16 @@ public class ChatManager : MonoBehaviour, IChatClientListener
     {
        
         userName = YG2.player.name;
+        if(userName == "UNAUTHORIZED")
+        {
+            if(YG2.envir.language == "ru")
+            {
+                userName = "Аноним";
+            } else
+            {
+                userName = "anonymous";
+            }
+        }
         Init(userName);
     }
 
@@ -40,7 +50,7 @@ public class ChatManager : MonoBehaviour, IChatClientListener
         chatClient?.Service();
     }
 
-    public void SendMessage(string msg)
+    public void SendMessageChaT(string msg)
     {
         chatClient.PublishMessage("global", msg);
     }
