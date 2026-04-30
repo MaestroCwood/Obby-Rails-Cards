@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Splines;
-using YG;
+//using YG;
 
 public class RewardSpeedTelejka : MonoBehaviour
 {
@@ -10,12 +10,12 @@ public class RewardSpeedTelejka : MonoBehaviour
 
     private void Start()
     {
-        YG2.onRewardAdv += OnRewardedSpeed;
+       // YG2.onRewardAdv += OnRewardedSpeed;
     }
 
     private void OnDisable()
     {
-        YG2.onRewardAdv -= OnRewardedSpeed;
+        //YG2.onRewardAdv -= OnRewardedSpeed;
     }
 
 
@@ -24,7 +24,7 @@ public class RewardSpeedTelejka : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //YG2.onRewardAdv("Speed");
-            YG2.RewardedAdvShow("Speed");
+          //  YG2.RewardedAdvShow("Speed");
         }
     }
 

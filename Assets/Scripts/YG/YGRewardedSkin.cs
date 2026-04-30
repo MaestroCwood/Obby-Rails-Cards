@@ -1,6 +1,6 @@
-using System;
+using GamePush;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class YGRewardedSkin : MonoBehaviour
 {
@@ -23,18 +23,21 @@ public class YGRewardedSkin : MonoBehaviour
 
     private void OnGetSK()
     {
-        isRewardedComlited = YG2.saves.skinHuggi == 0 ? false : true;
+        //isRewardedComlited = YG2.saves.skinHuggi == 0 ? false : true;
     }
 
     private void OnEnable()
     {
-        YG2.onRewardAdv += OnRewarded;
-        YG2.onGetSDKData += OnGetSK;
+        //   YG2.onRewardAdv += OnRewarded;
+        // YG2.onGetSDKData += OnGetSK;
+
+        GP_Ads.OnRewardedReward += OnRewarded;
     }
 
     private void OnDisable()
     {
-        YG2.onRewardAdv -= OnRewarded;
+        // YG2.onRewardAdv -= OnRewarded;
+        GP_Ads.OnRewardedReward -= OnRewarded;
     }
 
     private void OnRewarded(string obj)
@@ -43,17 +46,23 @@ public class YGRewardedSkin : MonoBehaviour
         {
             ActivateSkin();
             isRewardedComlited=true;
-            YG2.saves.skinHuggi = 1;
-            YG2.SaveProgress();
+         //   YG2.saves.skinHuggi = 1;
+           // YG2.SaveProgress();
             ico.SetActive(!isRewardedComlited);
         }
+    }
+
+    private void ShowRewarded(string idOrTag)
+    {
+        GP_Ads.ShowRewarded(idOrTag);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isRewardedComlited)
         {
-            YG2.RewardedAdvShow("Huggi");
+            // YG2.RewardedAdvShow("Huggi");
+            ShowRewarded("Huggi");
         } else if (isRewardedComlited)
         {
             ActivateSkin();

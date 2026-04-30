@@ -2,7 +2,7 @@ using StarterAssets;
 using System;
 using UnityEngine;
 using UnityEngine.Splines;
-using YG;
+//using YG;
 
 public class MakeRaidsManager : MonoBehaviour
 {
@@ -36,7 +36,7 @@ public class MakeRaidsManager : MonoBehaviour
         GoToRainds.OnStartRaindGoMove += GoToRainds_OnStartRaindGoMove;
         GoToRainds.OnStopRaindGoMove += GoToRainds_OnStopRaindGoMove;
 
-        YG2.onRewardAdv += OnRewardedShow;
+      //  YG2.onRewardAdv += OnRewardedShow;
     }
 
 
@@ -46,7 +46,7 @@ public class MakeRaidsManager : MonoBehaviour
         GoToRainds.OnStartRaindGoMove -= GoToRainds_OnStartRaindGoMove;
         GoToRainds.OnStopRaindGoMove -= GoToRainds_OnStopRaindGoMove;
 
-        YG2.onRewardAdv -= OnRewardedShow;
+        //YG2.onRewardAdv -= OnRewardedShow;
     }
 
    

@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Splines;
-using YG;
+//using YG;
 
 
 
@@ -39,7 +39,7 @@ public class GoToRainds : MonoBehaviour
     private void Start()
     {
         assetsInputs.OnStartJumpPlayer += PlayerController_OnJump;
-        YG2.onRewardAdv += OnRewardedYg;
+       // YG2.onRewardAdv += OnRewardedYg;
 
       
     }
@@ -47,7 +47,7 @@ public class GoToRainds : MonoBehaviour
     private void OnDisable()
     {
         assetsInputs.OnStartJumpPlayer -= PlayerController_OnJump;
-        YG2.onRewardAdv -= OnRewardedYg;
+       // YG2.onRewardAdv -= OnRewardedYg;
     }
 
   

@@ -2,7 +2,7 @@ using Photon.Chat;
 using Photon.Chat.DemoChat;
 using System.Collections.Generic;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class ChatManager : MonoBehaviour, IChatClientListener
 {
@@ -20,14 +20,14 @@ public class ChatManager : MonoBehaviour, IChatClientListener
     private void Start()
     {
 
-        userName = YG2.player.name;
+       // userName = YG2.player.name;
         if (userName == "UNAUTHORIZED")
         {
-            if (YG2.envir.language == "ru")
+           // if (YG2.envir.language == "ru")
             {
                 userName = "Аноним";
             }
-            else
+       //     else
             {
                 userName = "anonymous";
             }

@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
+//using YG;
 
 public class VisuaManager : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class VisuaManager : MonoBehaviour
     bool isAcriveWarningPanel = false;
     private void Start()
     {
-        language = YG2.envir.language;
+       // language = YG2.envir.language;
     }
 
 

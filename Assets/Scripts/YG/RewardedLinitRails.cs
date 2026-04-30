@@ -1,7 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class RewardedLinitRails : MonoBehaviour
 {
@@ -18,12 +18,12 @@ public class RewardedLinitRails : MonoBehaviour
 
     private void OnEnable()
     {
-        YG2.onRewardAdv += OnRewardedShow;
+     //   YG2.onRewardAdv += OnRewardedShow;
     }
 
     private void OnDisable()
     {
-        YG2.onRewardAdv -= OnRewardedShow;
+     //   YG2.onRewardAdv -= OnRewardedShow;
     }
 
  
@@ -32,7 +32,7 @@ public class RewardedLinitRails : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            YG2.RewardedAdvShow("Limit");
+            //YG2.RewardedAdvShow("Limit");
         }
     }
 

@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-using YG;
+//using YG;
 
 public class QualitySet : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class QualitySet : MonoBehaviour
 
     private void Start()
     {
-        isMobileDivece = YG2.envir.isMobile;
+      //  isMobileDivece = YG2.envir.isMobile;
 
         if (isMobileDivece)
         {

@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class BikeRewarded : MonoBehaviour
 {
@@ -17,12 +17,12 @@ public class BikeRewarded : MonoBehaviour
 
     private void OnEnable()
     {
-        YG2.onRewardAdv += OnRewardedShow;
+      //  YG2.onRewardAdv += OnRewardedShow;
     }
 
     private void OnDisable()
     {
-        YG2.onRewardAdv -= OnRewardedShow;
+        //YG2.onRewardAdv -= OnRewardedShow;
     }
 
     private void OnRewardedShow(string obj)
@@ -45,13 +45,13 @@ public class BikeRewarded : MonoBehaviour
                 switch(bikeType)
                 {
                     case BikeType.Skate:
-                        YG2.RewardedAdvShow("Skate");
+                     //   YG2.RewardedAdvShow("Skate");
                         break;
                     case BikeType.Scooter:
-                        YG2.RewardedAdvShow("Scooter");
+                       // YG2.RewardedAdvShow("Scooter");
                         break;
                     case BikeType.Bicycle:
-                        YG2.RewardedAdvShow("Bicycle");
+                       // YG2.RewardedAdvShow("Bicycle");
                         break;
                 }
             }

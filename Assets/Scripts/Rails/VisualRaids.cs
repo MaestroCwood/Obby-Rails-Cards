@@ -1,7 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class VisualRaids : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class VisualRaids : MonoBehaviour
 
     private void Start()
     {
-        language = YG2.envir.language;
+        //language = YG2.envir.language;
     }
     private void OnDisable()
     {

@@ -1,7 +1,7 @@
 using StarterAssets;
 using System;
 using UnityEngine;
-using YG;
+//using YG;
 using static BikeRewarded;
 
 public class BikeManagerRewarded : MonoBehaviour
@@ -18,7 +18,7 @@ public class BikeManagerRewarded : MonoBehaviour
     
     private void OnEnable()
     {
-        YG2.onRewardAdv += OnRewardedShow;
+     //   YG2.onRewardAdv += OnRewardedShow;
         BikeRewarded.OnBikeRewarded += OnActivateBike;
 
         GoToRainds.OnStartRaindGoMove += GoToRainds_OnStartRaindGoMove;
@@ -28,7 +28,7 @@ public class BikeManagerRewarded : MonoBehaviour
  
     private void OnDisable()
     {
-        YG2.onRewardAdv += OnRewardedShow;
+      //  YG2.onRewardAdv += OnRewardedShow;
         BikeRewarded.OnBikeRewarded -= OnActivateBike;
 
         GoToRainds.OnStartRaindGoMove -= GoToRainds_OnStartRaindGoMove;

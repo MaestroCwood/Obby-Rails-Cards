@@ -1,7 +1,6 @@
 using StarterAssets;
-using System;
 using UnityEngine;
-using YG;
+//using YG;
 
 public class Rewarded : MonoBehaviour
 {
@@ -9,12 +8,12 @@ public class Rewarded : MonoBehaviour
 
     private void Start()
     {
-        YG2.onRewardAdv += OnRewardedComlited;
+      //  YG2.onRewardAdv += OnRewardedComlited;
     }
 
     private void OnDisable()
     {
-        YG2.onRewardAdv -= OnRewardedComlited;
+        //YG2.onRewardAdv -= OnRewardedComlited;
     }
 
     private void OnRewardedComlited(string obj)

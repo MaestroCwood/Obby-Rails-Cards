@@ -1,5 +1,5 @@
 using UnityEngine;
-using YG;
+//using YG;
 
 public class CheckDevice : MonoBehaviour
 {
@@ -7,7 +7,7 @@ public class CheckDevice : MonoBehaviour
 
     private void Start()
     {
-        isMobileDevice = YG2.envir.isMobile;
+       // isMobileDevice = YG2.envir.isMobile;
 
         ChangeActiveSelfObject();
     }

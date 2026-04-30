@@ -1,3 +1,0 @@
-﻿Build path: C:/Users/wwwdu/Desktop/Проекты Юнити/Obby Rails Raids/Add Chat RuntimeSpeed
-Build number: 44
-PluginYG version: 2.008

@@ -1,7 +1,7 @@
 ﻿using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using YG;
+//using YG;
 
 
 
@@ -18,7 +18,7 @@ public class YGTouchscreen : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     private void Awake()
     {
-         isMobile = YG2.envir.isMobile;
+         //isMobile = YG2.envir.isMobile;
         axisController.ReadControlValueOverride = ReadCameraInput;
     }
 
